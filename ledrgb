@@ -1,0 +1,62 @@
+
+//int redPin = 11;
+//int greenPin = 10;
+//int bluePin = 9;
+int redPin = A0;
+int greenPin = A1;
+int bluePin = A2;
+
+//uncomment this line if using a Common Anode LED
+//#define COMMON_ANODE
+
+int delayTime = 2000;
+
+
+
+void setup()
+{
+  pinMode(redPin, OUTPUT);
+  pinMode(greenPin, OUTPUT);
+  pinMode(bluePin, OUTPUT);
+}
+
+
+
+void loop()
+{
+
+  setColor(255, 255, 0); // red       //Works for Analog pins
+  delay(delayTime);
+  setColor(0, 255, 0); // green     //Works for Analog pins
+  delay(delayTime);
+  setColor(0, 0, 255); // blue      //Works for Analog pins
+  delay(delayTime);
+  setColor(255, 255, 0); // yellow  //Works for Analog pins
+  delay(delayTime);
+  setColor(80, 0, 80); // purple    //Does not work for analog pins. LED off
+  delay(delayTime);
+  setColor(0, 255, 255); // aqua    //Works for Analog pins
+  delay(delayTime);
+  setColor(255, 127, 0); // orange  //Does not work for analog pins. Displays red
+  delay(delayTime);
+  setColor(255, 255, 255); // white      
+  delay(delayTime);
+  setColor(255, 0, 255); //         //Works for Analog pins
+  delay(delayTime);
+  setColor(255, 0, 100); //         //Does not work for analog pins. Displays red
+  delay(delayTime);
+}
+
+
+
+void setColor(int red, int green, int blue)
+{
+  #ifdef COMMON_ANODE
+  red = 255 - red;
+  green = 255 - green;
+  blue = 255 - blue;
+  #endif
+  analogWrite(redPin, red);
+  analogWrite(greenPin, green);
+  analogWrite(bluePin, blue);
+}
