@@ -1,0 +1,13 @@
+void setup() {
+   // initialise les broches
+   pinMode(12, OUTPUT);
+}
+
+void loop() {
+   tone (12, 600); // allume le buzzer actif arduino
+   delay(500);
+   tone(12, 900); // allume le buzzer actif arduino
+   delay(500);
+   noTone(12);  // désactiver le buzzer actif arduino
+   delay(500);
+}
