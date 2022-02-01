@@ -1,0 +1,29 @@
+#define RED 11
+#define GRN 12
+#define BLU 13
+ 
+void setup() {
+   pinMode(RED, OUTPUT);
+   pinMode(GRN, OUTPUT);
+   pinMode(BLU, OUTPUT);
+}
+ 
+void loop() {
+   digitalWrite(RED, HIGH);
+   digitalWrite(GRN, LOW);
+   digitalWrite(BLU, LOW);
+ 
+   delay(1000);
+ 
+   digitalWrite(RED, LOW);
+   digitalWrite(GRN, HIGH);
+   digitalWrite(BLU, LOW);
+ 
+   delay(1000);
+ 
+   digitalWrite(RED, LOW);
+   digitalWrite(GRN, LOW);
+   digitalWrite(BLU, HIGH);
+ 
+   delay(1000);
+}
